@@ -35,7 +35,7 @@ local defaultList = {
 
 local status, data = pcall(HttpService.GetAsync, HttpService, GITHUB_URI)
 if status then
-    data = HttpService:DecodeJSON(data)
+    data = HttpService:JSONDecode(data)
 	return {table.unpack(defaultList), table.unpack(data)}
 else
 	warn(status, data)
